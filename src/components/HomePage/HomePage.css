@@ -1,46 +1,46 @@
 .home-page {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    grid-gap: 30px clamp(15px, 4vw, 50px);
-    margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-gap: 30px clamp(15px, 4vw, 50px);
+  margin: 0 auto;
 }
 
 .popular-movies-container {
-    margin: 10px;
-    height: 360px;
-    padding: 6px 8px;
+  margin: 10px;
+  height: 360px;
+  padding: 6px 8px;
 }
 
 .popular-movies-container:hover {
-    opacity: 0.5;
-    cursor: pointer;
+  opacity: 0.5;
+  cursor: pointer;
 }
 
 .popular-movie-image-container {
-    width: auto;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+  width: auto;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .popular-movie-image {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: auto;
-    height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: auto;
+  height: 100%;
 }
 
 .popular-movie-name {
-    font-size: 22px;
-    font-weight: 600;
-    padding-top: 5px;
+  font-size: 22px;
+  font-weight: 600;
+  padding-top: 5px;
 }
 
 .line-separator {
-    display: flex;
-    min-width: 100%;
-    min-height: 2px;
-    background-color: rgba(218, 218, 218, 0.388);
+  display: flex;
+  min-width: 100%;
+  min-height: 2px;
+  background-color: rgba(218, 218, 218, 0.388);
 }
