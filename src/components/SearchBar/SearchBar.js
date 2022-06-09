@@ -7,6 +7,7 @@ import { ClipLoader } from "react-spinners";
 import { useDebounce } from "../../hooks/debounceHook";
 import axios from "axios";
 import { Movies } from "../Movies/Movies";
+import { Link } from "react-router-dom";
 
 export function SearchBar(props) {
   const [isExpanded, setExpanded] = useState(false);
@@ -117,7 +118,7 @@ export function SearchBar(props) {
       </div>
       {isExpanded && <div className="line-separator"></div>}
       {isExpanded && (
-        <div className="search-content">
+        <div className="search-content" onClick={collapseContainer}>
           {isLoading && (
             <div className="loading-wrapper">
               <ClipLoader loading color="gray" size={45} />
@@ -136,16 +137,23 @@ export function SearchBar(props) {
             </div>
           )}
           {!isLoading && !isEmpty && (
-            <>
-              {movies.map(({ show }) => (
-                <Movies
-                  key={show.id}
-                  movieImage={show.image && show.image.medium}
-                  movieName={show?.name}
-                  movieRating={show.rating && show.rating.average}
-                />
-              ))}
-            </>
+            <Link style={{ textDecoration: "none" }} to="/movie/:movieID">
+              <>
+                {movies.map(({ show }) => (
+                  <Link
+                    style={{ textDecoration: "none" }}
+                    to={`/movies/${show.externals.thetvdb}`}
+                  >
+                    <Movies
+                      key={show.id}
+                      movieImage={show.image && show.image.medium}
+                      movieName={show.name}
+                      movieRating={show.rating && show.rating.average}
+                    />
+                  </Link>
+                ))}
+              </>
+            </Link>
           )}
         </div>
       )}

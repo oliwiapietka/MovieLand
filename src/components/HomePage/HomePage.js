@@ -24,14 +24,17 @@ export function HomePage() {
   }, []);
 
   return (
-    <Link to="/movie/:movieID">
+    <Link style={{ textDecoration: "none" }} to="/movie/:movieID">
       <div className="home-page">
         {
           <>
             {popularMovies.map((show) => (
-              <Link to={`/movies/${show.externals.tvrage}`}>
+              <Link
+                style={{ textDecoration: "none" }}
+                to={`/movies/${show.externals.thetvdb}`}
+              >
                 <div
-                  key={show.externals.tvrage}
+                  key={show.externals.thetvdb}
                   className="popular-movies-container"
                 >
                   <div className="popular-movie-image-container">

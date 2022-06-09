@@ -1,4 +1,4 @@
-.movies-container {
+.searchbar-movies-container {
   width: 100%;
   height: 60px;
   display: flex;
@@ -7,38 +7,38 @@
   align-items: center;
 }
 
-#dark .movies-container {
+#dark .searchbar-movies-container {
   border-bottom: 1px solid rgba(28, 28, 28, 0.388);
 }
 
-.movies-container:hover {
+.searchbar-movies-container:hover {
   background-color: rgba(107, 107, 107, 0.11);
   border-top-right-radius: 70px;
   border-bottom-right-radius: 70px;
   cursor: pointer;
 }
 
-#dark .movies-container:hover {
+#dark .searchbar-movies-container:hover {
   background-color: rgba(28, 28, 28, 0.512);
 }
 
-.movies-container:focus {
+.searchbar-movies-container:focus {
   background-color: rgb(107, 107, 107);
 }
 
-.movie-image-container {
+.searchbar-movie-image-container {
   width: auto;
   height: 100%;
   display: flex;
   flex: 0.4;
 }
 
-.movie-image {
+.searchbar-movie-image {
   width: auto;
   height: 100%;
 }
 
-.movie-name {
+.searchbar-movie-name {
   font-size: 17px;
   font-weight: 500;
   color: rgba(14, 14, 14, 0.884);
@@ -48,11 +48,11 @@
   justify-content: flex-start;
 }
 
-#dark .movie-name {
+#dark .searchbar-movie-name {
   color: rgb(208, 208, 208);
 }
 
-.movie-rating {
+.searchbar-movie-rating {
   padding-right: 30px;
   color: rgba(24, 24, 24, 0.388);
   font-size: 16px;
@@ -61,6 +61,6 @@
   justify-content: center;
 }
 
-#dark .movie-rating {
+#dark .searchbar-movie-rating {
   color: rgba(171, 171, 171, 0.701);
 }

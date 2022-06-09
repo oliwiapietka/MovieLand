@@ -1,3 +1,76 @@
+.movie-container {
+  margin: auto;
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  height: 500px;
+  border-radius: 6px;
+  background-color: white;
+  box-shadow: 0px 2px 12px 3px rgba(90, 90, 90, 0.134);
+  justify-content: center;
+  min-width: 800px;
+  position: relative;
+}
+
+.movie-image-container {
+  margin: auto;
+  height: 100%;
+  display: flex;
+}
+
 .movie-image {
-  height: 800px;
+  height: 500px;
+  border-radius: 6px;
+}
+
+.movie-name {
+  margin: 15px 0px 15px 0px;
+  display: flex;
+  justify-content: center;
+  font-size: 35px;
+  font-weight: 500;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: rgb(43, 43, 43);
+}
+
+.movie-summary {
+  display: flex;
+  margin: 0px 70px 0px 70px;
+  justify-content: center;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: rgb(58, 58, 58);
+  overflow: auto;
+  max-height: 280px;
+}
+
+.other-container {
+  display: flex;
+  position: absolute;
+  bottom: 0px;
+}
+
+.movie-rating {
+  display: flex;
+  border-radius: 10px;
+  box-shadow: 0px 2px 12px 3px rgba(90, 90, 90, 0.134);
+  margin: 10px;
+  padding: 5px;
+}
+
+.movie-genres {
+  display: flex;
+  border-radius: 10px;
+  box-shadow: 0px 2px 12px 3px rgba(90, 90, 90, 0.134);
+  margin: 10px;
+  padding: 5px;
+}
+
+.movie-dates {
+  display: flex;
+  white-space: nowrap;
+  border-radius: 10px;
+  box-shadow: 0px 2px 12px 3px rgba(90, 90, 90, 0.134);
+  margin: 10px;
+  padding: 5px;
 }
