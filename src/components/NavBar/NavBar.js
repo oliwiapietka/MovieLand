@@ -19,7 +19,7 @@ function NavBar() {
         <div
           className="main-logo"
           onClick={() => {
-            navigate("/");
+            navigate("/MovieLand");
           }}
         >
           MOVIE LAND
