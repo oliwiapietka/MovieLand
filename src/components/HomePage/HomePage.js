@@ -30,18 +30,18 @@ export function HomePage() {
           <>
             {popularMovies.sort((a, b) => a.rating.average > b.rating.average ? -1 : 1).map((show) => (
               <Link
+                key={show.externals.thetvdb}
                 style={{ textDecoration: "none" }}
                 to={`/movies/${show.externals.thetvdb}`}
               >
                 <div
-                  key={show.externals.thetvdb}
                   className="popular-movies-container"
                 >
                   <div className="popular-movie-image-container">
                     <img
                       className="popular-movie-image"
                       src={show.image.original}
-                      alt=""
+                      alt={show.name}
                     />
                   </div>
                   <div className="popular-movie-name">{show.name}</div>

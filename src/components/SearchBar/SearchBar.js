@@ -142,10 +142,10 @@ export function SearchBar(props) {
                 {movies.map(({ show }) => (
                   <Link
                     style={{ textDecoration: "none" }}
+                    key={show.id}
                     to={`/movies/${show.externals.thetvdb}`}
                   >
                     <Movies
-                      key={show.id}
                       movieImage={show.image && show.image.medium}
                       movieName={show.name}
                       movieRating={show.rating && show.rating.average}
