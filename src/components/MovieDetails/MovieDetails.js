@@ -37,7 +37,7 @@ const MovieDetails = () => {
               <img
                 className="movie-image"
                 src={movie.image && movie.image.original}
-                alt={"movie.name"}
+                alt={movie.name}
               />
             )}
             <div>

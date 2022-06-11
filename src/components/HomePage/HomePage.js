@@ -5,17 +5,17 @@ import { Link } from "react-router-dom";
 
 export function HomePage() {
   const [popularMovies, setPopularMovies] = useState([]);
-
+  
   const fetchPopularMovies = async () => {
-    const response = await axios
-      .get("https://api.tvmaze.com/shows?page=1")
-      .catch((err) => {
-        console.log("Eror: ", err);
-      });
-
-    if (response) {
-      setPopularMovies(response.data);
-      console.log("Response: ", response.data);
+    const res = await axios
+    .get("https://api.tvmaze.com/shows?page=1")
+    .catch((err) => {
+      console.log("Eror: ", err);
+    });
+    
+    if (res) {
+      setPopularMovies(res.data);
+      console.log("Response: ", res.data);
     }
   };
 
@@ -28,7 +28,7 @@ export function HomePage() {
       <div className="home-page">
         {
           <>
-            {popularMovies.map((show) => (
+            {popularMovies.sort((a, b) => a.rating.average > b.rating.average ? -1 : 1).map((show) => (
               <Link
                 style={{ textDecoration: "none" }}
                 to={`/movies/${show.externals.thetvdb}`}
@@ -50,7 +50,7 @@ export function HomePage() {
             ))}
           </>
         }
-      </div>
+        </div>
     </Link>
   );
 }
