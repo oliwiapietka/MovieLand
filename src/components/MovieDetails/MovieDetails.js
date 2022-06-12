@@ -21,7 +21,7 @@ export const MovieDetails = () => {
       "Cast fetch error"
     );
     setCast(cast);
-    setLoading(false)
+    setLoading(false);
   };
 
   useEffect(() => {
@@ -31,43 +31,43 @@ export const MovieDetails = () => {
 
   return (
     <>
-    {!loading && 
-      <div
-        key={movie.externals && movie.externals.thetvdb}
-        className="movie-container"
-      >
-        <div className="movie-image-container">
-          {movie.image && (
-            <img
-              className="movie-image"
-              src={movie.image && movie.image.original}
-              alt={movie.name}
-            />
-          )}
-          <div>
-            <div className="movie-name">{movie.name}</div>
-            <div
-              className="movie-summary"
-              dangerouslySetInnerHTML={{ __html: movie.summary }}
-            ></div>
-            {cast?.map((member) => {
-              console.log(member);
-              return <div>{member.person.name}</div>;
-            })}
-            <div className="other-container">
-              <div className="movie-rating">
-                {movie?.rating?.average}/10
-                <IoStar />
-              </div>
-              <div className="movie-genres">{movie?.genres?.[0]}</div>
-              <div className="movie-dates">
-                from {movie.premiered} to {movie.ended}
+      {!loading && (
+        <div
+          key={movie.externals && movie.externals.thetvdb}
+          className="movie-container"
+        >
+          <div className="movie-image-container">
+            {movie.image && (
+              <img
+                className="movie-image"
+                src={movie.image && movie.image.original}
+                alt={movie.name}
+              />
+            )}
+            <div>
+              <div className="movie-name">{movie.name}</div>
+              <div
+                className="movie-summary"
+                dangerouslySetInnerHTML={{ __html: movie.summary }}
+              ></div>
+              <div className="other-container">
+                <div className="movie-rating">
+                  {movie?.rating?.average}/10
+                  <IoStar />
+                </div>
+                <div className="movie-genres">{movie?.genres?.[0]}</div>
+                <div className="movie-dates">
+                  from {movie.premiered} to {movie.ended}
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    }
+      )}
+              {cast?.map((member) => {
+                console.log(member);
+                return <img src={member?.character?.image?.original} />;
+              })}
     </>
   );
 };
