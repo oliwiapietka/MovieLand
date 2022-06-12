@@ -1,33 +1,37 @@
 .movie-container {
   margin: auto;
-  margin-top: 60px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.movie-info-container {
   width: 90%;
   height: 500px;
+  margin-top: 40px;
   border-radius: 6px;
   background-color: white;
   box-shadow: 0px 2px 12px 3px rgba(90, 90, 90, 0.134);
-  justify-content: center;
-  min-width: 800px;
+  display: flex;
+  flex-direction: row;
+  min-width: 660px;
   position: relative;
 }
 
 .movie-image-container {
-  margin: auto;
-  height: 100%;
   display: flex;
 }
 
 .movie-image {
-  height: 500px;
+  background-size: contain;
   border-radius: 6px;
+  max-height: 600px;
 }
 
 .movie-name {
-  margin: 15px 0px 15px 0px;
   display: flex;
   justify-content: center;
+  margin: 15px 0px 15px 0px;
   font-size: 35px;
   font-weight: 500;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
@@ -36,41 +40,68 @@
 
 .movie-summary {
   display: flex;
-  margin: 0px 70px 0px 70px;
   justify-content: center;
+  margin: 20px 70px 0px 70px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   color: rgb(58, 58, 58);
   overflow: auto;
-  max-height: 280px;
+  max-height: 360px;
+  max-width: 800px;
 }
 
 .other-container {
   display: flex;
+  flex-direction: row;
+  gap: 20px;
   position: absolute;
-  bottom: 0px;
+  bottom: 10px;
+  margin-left: 10px;
+}
+
+.movie-genres, .movie-dates {
+  border-radius: 10px;
+  box-shadow: 0px 2px 12px 3px rgba(90, 90, 90, 0.134);
+  padding: 5px;
 }
 
 .movie-rating {
-  display: flex;
   border-radius: 10px;
   box-shadow: 0px 2px 12px 3px rgba(90, 90, 90, 0.134);
-  margin: 10px;
   padding: 5px;
-}
-
-.movie-genres {
-  display: flex;
-  border-radius: 10px;
-  box-shadow: 0px 2px 12px 3px rgba(90, 90, 90, 0.134);
-  margin: 10px;
-  padding: 5px;
-}
-
-.movie-dates {
-  display: flex;
   white-space: nowrap;
-  border-radius: 10px;
+}
+
+.movie-cast-container {
+  position: absolute;
+  margin-top: 30%;
+  margin-left: -340px;
+  max-width: 100%;
+  min-width: 50%;
+  display: flex;
+  flex-direction: row;
+  overflow: auto;
+  padding: 10px;
+  border-radius: 6px;
+  background-color: white;
   box-shadow: 0px 2px 12px 3px rgba(90, 90, 90, 0.134);
-  margin: 10px;
-  padding: 5px;
+  justify-content: space-between;
+  max-height: 400px;
+}
+
+.movie-character-image {
+  position: relative;
+  border-radius: 6px;
+  display: flex;
+}
+
+.movie-character-name {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  top: 220px;
+  right: 120px;
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }

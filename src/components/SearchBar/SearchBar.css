@@ -1,9 +1,9 @@
 .search-bar-container {
-  margin-left: 30px;
+  margin-left: 10px;
   margin-top: 22px;
   display: flex;
   flex-direction: column;
-  width: 600px;
+  width: 50%;
   height: 50px;
   background-color: rgb(255, 255, 255);
   border-radius: 6px;

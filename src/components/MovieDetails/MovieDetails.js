@@ -36,38 +36,55 @@ export const MovieDetails = () => {
           key={movie.externals && movie.externals.thetvdb}
           className="movie-container"
         >
-          <div className="movie-image-container">
-            {movie.image && (
-              <img
-                className="movie-image"
-                src={movie.image && movie.image.original}
-                alt={movie.name}
-              />
-            )}
-            <div>
-              <div className="movie-name">{movie.name}</div>
-              <div
-                className="movie-summary"
-                dangerouslySetInnerHTML={{ __html: movie.summary }}
-              ></div>
-              <div className="other-container">
-                <div className="movie-rating">
-                  {movie?.rating?.average}/10
-                  <IoStar />
+          <div className="movie-info-container">
+            <div className="movie-image-container">
+              {movie.image && (
+                <img
+                  className="movie-image"
+                  src={movie.image && movie.image.original}
+                  alt={movie.name}
+                />
+              )}
+              <div>
+                <div className="movie-name">{movie.name}</div>
+                <div
+                  className="movie-summary"
+                  dangerouslySetInnerHTML={{ __html: movie.summary }}
+                ></div>
+                <div className="other-container">
+                  <div className="movie-rating">
+                    {movie?.rating?.average}/10
+                    <IoStar />
+                  </div>
+                  <div className="movie-genres">{movie?.genres?.[0]}</div>
+                  <div className="movie-dates">
+                    from {movie.premiered} to {movie.ended}
+                  </div>
                 </div>
-                <div className="movie-genres">{movie?.genres?.[0]}</div>
-                <div className="movie-dates">
-                  from {movie.premiered} to {movie.ended}
+                <div className="movie-cast-container">
+                  {cast?.map((member) => {
+                    console.log(member);
+                    return (
+                      <>
+                        {member.character.image?.medium && (
+                          <img
+                            className="movie-character-image"
+                            src={member.character?.image?.medium}
+                            alt={member.character?.name}
+                          />
+                        )}
+                        <p className="movie-character-name">
+                          {member.character.name}
+                        </p>
+                      </>
+                    );
+                  })}
                 </div>
               </div>
             </div>
           </div>
         </div>
       )}
-              {cast?.map((member) => {
-                console.log(member);
-                return <img src={member?.character?.image?.original} />;
-              })}
     </>
   );
 };

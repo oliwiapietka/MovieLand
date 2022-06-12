@@ -12,10 +12,12 @@
   left: 0;
   right: 0;
   height: 90px;
+  width: 100%;
   z-index: 100;
 }
 
 .main-logo {
+  margin: 5px;
   margin-top: 28px;
   display: flex;
   white-space: nowrap;
