@@ -8,6 +8,7 @@ export const MovieDetails = () => {
   const params = useParams();
   const [movie, setMovie] = useState({});
   const [cast, setCast] = useState({});
+  const [seasons, setSeasons] = useState({});
   const [loading, setLoading] = useState(true);
 
   const fetchClickedMovie = async () => {
@@ -21,6 +22,11 @@ export const MovieDetails = () => {
       "Cast fetch error"
     );
     setCast(cast);
+    const seasons = await fetchData(
+      `shows/${movieData?.id}/seasons`,
+      "Seasons fetch error"
+    );
+    setSeasons(seasons);
     setLoading(false);
   };
 
@@ -81,6 +87,20 @@ export const MovieDetails = () => {
                   })}
                 </div>
               </div>
+            </div>
+            <div className="movie-seasons-container">
+              {seasons?.map((season) => {
+                console.log(season);
+                return (
+                  <>
+                    <img
+                      className="movie-season-image"
+                      src={season?.image?.medium}
+                      alt={season?.name}
+                    />
+                  </>
+                );
+              })}
             </div>
           </div>
         </div>

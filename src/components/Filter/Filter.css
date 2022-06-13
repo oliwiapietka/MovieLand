@@ -1,0 +1,32 @@
+.filter-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  overflow: auto;
+}
+
+.filter-container button {
+  margin: 40px 10px 15px 10px;
+  padding: 6px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 15px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  border: 2px solid rgb(255, 255, 255);
+  color: rgb(105, 105, 105);
+  background: white;
+  cursor: pointer;
+  width: 100px;
+  height: 40px;
+  box-shadow: 0px 2px 12px 3px rgba(90, 90, 90, 0.134);
+}
+
+.filter-container button:hover {
+  opacity: 0.7;
+}
+
+button.active {
+  background: rgb(76, 76, 76);
+  border: 2px solid rgb(76, 76, 76);
+  color: white;
+}
