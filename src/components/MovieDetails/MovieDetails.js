@@ -7,7 +7,7 @@ import { fetchData } from "../../utils/fetchData";
 export const MovieDetails = () => {
   const params = useParams();
   const [movie, setMovie] = useState({});
-  const [cast, setCast] = useState({});
+  const [character, setCharacter] = useState({});
   const [seasons, setSeasons] = useState({});
   const [loading, setLoading] = useState(true);
 
@@ -17,11 +17,11 @@ export const MovieDetails = () => {
       "Movie fetch error"
     );
     setMovie(movieData);
-    const cast = await fetchData(
+    const character = await fetchData(
       `shows/${movieData?.id}/cast`,
-      "Cast fetch error"
+      "Character fetch error"
     );
-    setCast(cast);
+    setCharacter(character);
     const seasons = await fetchData(
       `shows/${movieData?.id}/seasons`,
       "Seasons fetch error"
@@ -42,6 +42,7 @@ export const MovieDetails = () => {
           key={movie.externals && movie.externals.thetvdb}
           className="movie-container"
         >
+          <div className="movie-name">{movie.name}</div>
           <div className="movie-info-container">
             <div className="movie-image-container">
               {movie.image && (
@@ -51,57 +52,56 @@ export const MovieDetails = () => {
                   alt={movie.name}
                 />
               )}
-              <div>
-                <div className="movie-name">{movie.name}</div>
-                <div
-                  className="movie-summary"
-                  dangerouslySetInnerHTML={{ __html: movie.summary }}
-                ></div>
-                <div className="other-container">
-                  <div className="movie-rating">
-                    {movie?.rating?.average}/10
-                    <IoStar />
-                  </div>
-                  <div className="movie-genres">{movie?.genres?.[0]}</div>
-                  <div className="movie-dates">
-                    from {movie.premiered} to {movie.ended}
-                  </div>
+              <div
+                className="movie-summary"
+                dangerouslySetInnerHTML={{ __html: movie.summary }}
+              ></div>
+              <div className="other-container">
+                <div className="movie-rating">
+                  {movie?.rating?.average}/10
+                  <IoStar />
                 </div>
-                <div className="movie-cast-container">
-                  {cast?.map((member) => {
-                    console.log(member);
-                    return (
-                      <>
-                        {member.character.image?.medium && (
-                          <img
-                            className="movie-character-image"
-                            src={member.character?.image?.medium}
-                            alt={member.character?.name}
-                          />
-                        )}
-                        <p className="movie-character-name">
-                          {member.character.name}
-                        </p>
-                      </>
-                    );
-                  })}
+                <div className="movie-genres">{movie?.genres?.[0]}</div>
+                <div className="movie-dates">
+                  from {movie.premiered} to {movie.ended}
                 </div>
               </div>
             </div>
-            <div className="movie-seasons-container">
-              {seasons?.map((season) => {
-                console.log(season);
-                return (
-                  <>
+          </div>
+          <div className="movie-characters-text">MOVIE CHARACTERS</div>
+          <div className="movie-character-container">
+            {character?.map((member) => {
+              console.log(member);
+              return (
+                <>
+                  {member.character.image?.medium && (
                     <img
-                      className="movie-season-image"
-                      src={season?.image?.medium}
-                      alt={season?.name}
+                      className="movie-character-image"
+                      src={member.character?.image?.medium}
+                      alt={member.character?.name}
                     />
-                  </>
-                );
-              })}
-            </div>
+                  )}
+                  <p className="movie-character-name">
+                    {member.character.name}
+                  </p>
+                </>
+              );
+            })}
+          </div>
+          <div className="seasons-text">SEASONS</div>
+          <div className="movie-seasons-container">
+            {seasons?.map((season) => {
+              console.log(season);
+              return (
+                <>
+                  <img
+                    className="movie-season-image"
+                    src={season?.image?.medium}
+                    alt={season?.name}
+                  />
+                </>
+              );
+            })}
           </div>
         </div>
       )}
