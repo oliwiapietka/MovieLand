@@ -130,5 +130,34 @@
 }
 
 @media (max-width: 600px) {
-
+  .movie-image-container {
+    flex-direction: column;
+  }
+  .movie-image {
+    max-height: 1000px;
+  }
+  .movie-info-container {
+    background-color: none;
+    min-width: 300px;
+    max-height: 1200px;
+  }
+  .other-container {
+    position: static;
+    flex-direction: column;
+  }
+  .movie-container {
+    height: auto;
+  }
+  .movie-genres,
+  .movie-dates,
+  .movie-rating {
+    display: flex;
+    width: fit-content;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+  }
+  .movie-dates {
+    margin-bottom: 20px;
+  }
 }
