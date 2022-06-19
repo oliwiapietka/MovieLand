@@ -135,6 +135,8 @@
   }
   .movie-image {
     max-height: 1000px;
+    object-fit: contain;
+
   }
   .movie-info-container {
     background-color: none;
