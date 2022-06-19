@@ -33,7 +33,7 @@ export const MovieDetails = () => {
   useEffect(() => {
     fetchClickedMovie();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [params.movieID]);
 
   return (
     <>
