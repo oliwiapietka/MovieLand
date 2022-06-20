@@ -88,9 +88,11 @@ export const MovieDetails = () => {
                       alt={member.character?.name}
                     />
                   )}
+                  {member.character.image?.medium && (
                   <p className="movie-character-name">
                     {member.character.name}
                   </p>
+                  )}
                 </>
               );
             })}
