@@ -129,12 +129,16 @@
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
+.movie-details-loading-wrapper {
+  margin-top: 250px;
+  justify-content: center;
+}
+
 @media (max-width: 600px) {
   .movie-image-container {
     flex-direction: column;
   }
   .movie-image {
-    /* max-height: 1000px; */
     object-fit: contain;
   }
   .movie-info-container {

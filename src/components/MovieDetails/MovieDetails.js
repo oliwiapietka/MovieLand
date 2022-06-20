@@ -3,6 +3,7 @@ import { useParams } from "react-router";
 import "./MovieDetails.css";
 import { IoStar } from "react-icons/io5";
 import { fetchData } from "../../utils/fetchData";
+import { ClipLoader } from "react-spinners";
 
 export const MovieDetails = () => {
   const params = useParams();
@@ -12,6 +13,7 @@ export const MovieDetails = () => {
   const [loading, setLoading] = useState(true);
 
   const fetchClickedMovie = async () => {
+    setLoading(true);
     const movieData = await fetchData(
       `lookup/shows?thetvdb=${params?.movieID}`,
       "Movie fetch error"
@@ -37,6 +39,11 @@ export const MovieDetails = () => {
 
   return (
     <>
+      {loading && (
+        <div className="movie-details-loading-wrapper">
+          <ClipLoader loading color="gray" size={75} />
+        </div>
+      )}
       {!loading && (
         <div
           key={movie.externals && movie.externals.thetvdb}

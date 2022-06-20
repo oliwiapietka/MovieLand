@@ -4,11 +4,13 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { Filter } from "../Filter/Filter";
 import { motion, AnimatePresence } from "framer-motion";
+import { ClipLoader } from "react-spinners";
 
 export function HomePage() {
   const [popularMovies, setPopularMovies] = useState([]);
   const [filtered, setFiltered] = useState([]);
   const [activeGenre, setActiveGenre] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const fetchPopularMovies = async () => {
     const res = await axios
@@ -22,6 +24,7 @@ export function HomePage() {
       setFiltered(res.data);
       console.log("Response: ", res.data);
     }
+    setLoading(false);
   };
 
   useEffect(() => {
@@ -41,6 +44,11 @@ export function HomePage() {
         <motion.div layout className="home-page">
           {
             <>
+              {loading && (
+                <div className="home-page-loading-wrapper">
+                  <ClipLoader loading color="gray" size={75} />
+                </div>
+              )}
               {filtered
                 .sort((a, b) => (a.rating.average > b.rating.average ? -1 : 1))
                 .map((show) => (

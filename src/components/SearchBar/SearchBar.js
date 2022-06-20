@@ -120,19 +120,19 @@ export function SearchBar(props) {
       {isExpanded && (
         <div className="search-content" onClick={collapseContainer}>
           {isLoading && (
-            <div className="loading-wrapper">
+            <div className="search-bar-loading-wrapper">
               <ClipLoader loading color="gray" size={45} />
             </div>
           )}
           {!isLoading && isEmpty && !noMovies && (
-            <div className="loading-wrapper">
+            <div className="search-bar-loading-wrapper">
               <span className="warning-message">
                 Start typing to search a movie!
               </span>
             </div>
           )}
           {!isLoading && noMovies && (
-            <div className="loading-wrapper">
+            <div className="search-bar-loading-wrapper">
               <span className="warning-message">No movies found!</span>
             </div>
           )}
