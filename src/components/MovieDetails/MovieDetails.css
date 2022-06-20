@@ -134,12 +134,10 @@
     flex-direction: column;
   }
   .movie-image {
-    max-height: 1000px;
+    /* max-height: 1000px; */
     object-fit: contain;
-
   }
   .movie-info-container {
-    background-color: none;
     min-width: 300px;
     max-height: 1600px;
   }
